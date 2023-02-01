@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>PrincipalModularidad.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #808080;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PrincipalModularidad.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">PrincipalModularidad {</span>
+
+
+    <span class="s0">public static int </span><span class="s1">leerEntero(){</span>
+        <span class="s0">boolean </span><span class="s1">flag = </span><span class="s0">true;</span>
+        <span class="s0">int </span><span class="s1">e = </span><span class="s2">0</span><span class="s0">;</span>
+        <span class="s1">Scanner sc</span><span class="s0">;</span>
+        <span class="s0">do </span><span class="s1">{</span>
+            <span class="s0">try </span><span class="s1">{</span>
+
+                <span class="s1">sc = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">; </span><span class="s3">// Ingreso de datos del teclado</span>
+
+                <span class="s1">e = sc.nextInt()</span><span class="s0">;  </span><span class="s3">// Convierte el dato en Entero</span>
+                <span class="s1">flag=</span><span class="s0">false;</span>
+
+            <span class="s1">}</span>
+
+            <span class="s0">catch </span><span class="s1">(Exception ex){</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Error: ingrese un numero válido.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">System.out.print(</span><span class="s4">&quot;---&gt;&gt;Ingrese un número: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">flag= </span><span class="s0">true;</span>
+<span class="s3">//            ex.printStackTrace();</span>
+<span class="s3">//            System.out.print(ex.getMessage());</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+        <span class="s0">while</span><span class="s1">(flag)</span><span class="s0">;</span>
+
+        <span class="s0">return </span><span class="s1">e</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int </span><span class="s1">leerEnt(){</span>
+        <span class="s0">return new </span><span class="s1">Scanner(System.in).nextInt()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int </span><span class="s1">sumar(</span><span class="s0">int </span><span class="s1">num1</span><span class="s0">, int </span><span class="s1">num2){</span>
+        <span class="s0">int </span><span class="s1">suma = num1 + num2</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">suma</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int </span><span class="s1">restar(</span><span class="s0">int </span><span class="s1">num1</span><span class="s0">, int </span><span class="s1">num2){</span>
+        <span class="s0">int </span><span class="s1">dif = num1 - num2</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">dif</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int </span><span class="s1">multiplicar(</span><span class="s0">int </span><span class="s1">num1</span><span class="s0">, int </span><span class="s1">num2){</span>
+        <span class="s0">int </span><span class="s1">prod = num1 * num2</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">prod</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int </span><span class="s1">dividir(</span><span class="s0">int </span><span class="s1">num1</span><span class="s0">, int </span><span class="s1">num2){</span>
+        <span class="s0">int </span><span class="s1">cos = num1 / num2</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">cos</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+
+    <span class="s0">public static final </span><span class="s1">String ANSI_RESET = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[0m&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String ANSI_RED = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[031m&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String ANSI_CYAN = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[36m&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String ANSI_YELLOW = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[33m&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String ANSI_BLUE = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[34m&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String ANSI_GREEN = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[32m&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String ANSI_WHITE = </span><span class="s4">&quot;</span><span class="s0">\u001B</span><span class="s4">[37m&quot;</span><span class="s0">;</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s0">int </span><span class="s1">opcion</span><span class="s0">;</span>
+        <span class="s0">do </span><span class="s1">{</span>
+
+            <span class="s1">System.out.println(ANSI_RED+ </span><span class="s4">&quot;******* MENU *******&quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(ANSI_CYAN+</span><span class="s4">&quot;  0- Salir.&quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(ANSI_CYAN+</span><span class="s4">&quot;  1- Sumar.&quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(ANSI_CYAN+</span><span class="s4">&quot;  2- Restar.&quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(ANSI_CYAN+</span><span class="s4">&quot;  3- Multiplicar.&quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(ANSI_CYAN+</span><span class="s4">&quot;  4- Dividir.&quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">System.out.print(ANSI_YELLOW+</span><span class="s4">&quot;---&gt;&gt; Ingrese una opción: &quot;</span><span class="s1">+ ANSI_RESET)</span><span class="s0">;</span>
+            <span class="s1">opcion = leerEntero()</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">num1 = </span><span class="s2">0</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">num2 = </span><span class="s2">0</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(opcion != </span><span class="s2">0</span><span class="s1">) {</span>
+
+                <span class="s0">switch </span><span class="s1">( opcion ){</span>
+            <span class="s0">case </span><span class="s2">0</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Gracias por usar esta humilde calculadora. Vuelva pronto&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                    <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese sumado1 entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num1 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese sumando2 entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num2 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.println(</span><span class="s4">&quot;La suma de &quot; </span><span class="s1">+ num1 + </span><span class="s4">&quot; y &quot; </span><span class="s1">+ num2 + </span><span class="s4">&quot; es: &quot; </span><span class="s1">+ sumar(num1</span><span class="s0">, </span><span class="s1">num2))</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+
+                    <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese minuendo entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num1 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese sustraendo entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num2 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.println(</span><span class="s4">&quot;La diferencia de &quot; </span><span class="s1">+ num1 + </span><span class="s4">&quot; y &quot; </span><span class="s1">+ num2 + </span><span class="s4">&quot; es: &quot; </span><span class="s1">+ restar(num1</span><span class="s0">, </span><span class="s1">num2))</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+
+                    <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese un numero entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num1 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese otro numero entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num2 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.println(</span><span class="s4">&quot;El producto de &quot; </span><span class="s1">+ num1 + </span><span class="s4">&quot; y &quot; </span><span class="s1">+ num2 + </span><span class="s4">&quot; es: &quot; </span><span class="s1">+ multiplicar(num1</span><span class="s0">, </span><span class="s1">num2))</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+
+                    <span class="s0">case </span><span class="s2">4</span><span class="s1">:</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese un numero entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num1 = leerEntero()</span><span class="s0">;</span>
+                     <span class="s1">System.out.print(</span><span class="s4">&quot;Ingrese otro numero entero: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                     <span class="s1">num2 = leerEntero()</span><span class="s0">;</span>
+
+                        <span class="s0">if </span><span class="s1">(num2 == </span><span class="s2">0</span><span class="s1">){</span>
+                            <span class="s1">System.out.println(</span><span class="s4">&quot;Error: el divisor no puede ser cero (0):&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s1">System.out.println(</span><span class="s4">&quot;  0- Regresar al menu anterior. &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s1">System.out.println(</span><span class="s4">&quot;  1- Ingresa un nuevo divisor. &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s1">System.out.print(</span><span class="s4">&quot;     &gt;&gt; Seleccione una opcion: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s0">int </span><span class="s1">opcionDivisor = leerEntero()</span><span class="s0">;</span>
+                            <span class="s0">if </span><span class="s1">(opcionDivisor == </span><span class="s2">0</span><span class="s1">){</span>
+                                <span class="s1">System.out.println(</span><span class="s4">&quot;  Regresando al menu anterior ...&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                            <span class="s1">}</span>
+                            <span class="s0">else</span><span class="s1">{</span>
+                                <span class="s1">System.out.print(</span><span class="s4">&quot;    &gt;&gt; Nuevo divisor: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">num2 = leerEntero()</span><span class="s0">;</span>
+                                <span class="s0">if </span><span class="s1">(num2 == </span><span class="s2">0</span><span class="s1">){</span>
+                                    <span class="s1">System.out.println(</span><span class="s4">&quot;    Ingresaste cero nuevamente </span><span class="s0">\n </span><span class="s4">Regresando al menu principal...&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                                    <span class="s1">System.out.println(</span><span class="s4">&quot;El cosiente de &quot; </span><span class="s1">+ num1 + </span><span class="s4">&quot; y &quot; </span><span class="s1">+ num2 + </span><span class="s4">&quot; es: &quot; </span><span class="s1">+ dividir(num1</span><span class="s0">, </span><span class="s1">num2))</span><span class="s0">;</span>
+                                <span class="s1">}</span>
+                            <span class="s1">}</span>
+                        <span class="s1">}</span><span class="s0">else</span><span class="s1">{</span>
+                            <span class="s1">System.out.println(</span><span class="s4">&quot;El cosiente de &quot; </span><span class="s1">+ num1 + </span><span class="s4">&quot; y &quot; </span><span class="s1">+ num2 + </span><span class="s4">&quot; es: &quot; </span><span class="s1">+ dividir(num1</span><span class="s0">, </span><span class="s1">num2))</span><span class="s0">;</span>
+                        <span class="s1">}</span>
+
+                        <span class="s0">break;</span>
+
+                    <span class="s0">default</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Esa opción no es válida.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s0">break;</span>
+                <span class="s1">}</span>
+            <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Gracias por usar esta humilde calculadora. Vuelva pronto&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">while </span><span class="s1">( opcion &gt; </span><span class="s2">0 </span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+</pre>
+</body>
+</html>
